@@ -13,7 +13,19 @@
         Realiza todo lo anterior al hacer click en el botón. 
         */
 
+        let B1 = document.getElementById('btn_mayusculas');
 
+        function Min(e){
+          e.preventDefault();
+          var Nam = document.getElementById('txt_may').value.split(',');
+          for (var i=0; i < Nam.length; i++) {
+            console.log(Nam[i] = Nam[i].toLowerCase());
+          } 
+          document.getElementById('txt_may').value = Nam;
+         }
+        
+         B1.addEventListener("click",Min);    
+  
       /*
         Crea una funcion llamada "calculateDogAge" que: 
     
@@ -24,11 +36,20 @@
     - Ojo: Cuando se lee un valor de cualquier formulario, el tipo de dato por default es string. 
            Deberás convertir el string a Entero. 
     
-    */
+     */
+      
+       let B2 = document.getElementById('btn_añoshumano');
 
+       function calculateDogAge(e){
+        e.preventDefault();
+        var Age = document.getElementById('edad_humano').value;
+        var Age = Age*7;
+        document.getElementById('edad_perro').value = Age;
+       }
 
+       B2.addEventListener("click",calculateDogAge);
 
-      /*  OBJETOS 
+    /*  OBJETOS 
     
     A) Crea un constructor de tipo "Pokemon" que reciba 4 parametros
     
@@ -45,3 +66,34 @@
        Registra un evento de "click", para que cuando se de click en el botón, se muestren las propiedades de cada objeto en el input correspondiente. 
 
      */
+
+       let B3 = document.getElementById('btn_muestra');
+ 
+        function C1 (e){
+         e.preventDefault();
+ 
+         var Pokemon
+         function Pokemon (Nombre,Especie,Ataque,Defensa){
+           this.Nombre = Nombre;
+           this.Especie = Especie;
+           this.Ataque = Ataque;
+           this.Defensa = Defensa;
+        }
+ 
+         var Pok1 = new Pokemon('Charizard','Dragón',500,600);
+         var Pok2 = new Pokemon('Squirtle','Agua',200,800);
+ 
+        document.getElementById('nombre_poke1').value = Pok1.Nombre ;
+        document.getElementById('especie_poke1').value =  Pok1.Especie;
+        document.getElementById('ataque_poke1').value =  Pok1.Ataque;
+        document.getElementById('defensa_poke1').value =  Pok1.Defensa;
+ 
+ 
+        document.getElementById('nombre_poke2').value = Pok2.Nombre ;
+        document.getElementById('especie_poke2').value =  Pok2.Especie;
+        document.getElementById('ataque_poke2').value =  Pok2.Ataque;
+        document.getElementById('defensa_poke2').value =  Pok2.Defensa;
+ 
+        }
+ 
+        B3.addEventListener("click",C1);
